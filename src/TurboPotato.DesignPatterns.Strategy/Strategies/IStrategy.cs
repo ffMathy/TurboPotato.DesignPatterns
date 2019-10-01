@@ -6,6 +6,6 @@ namespace TurboPotato.DesignPatterns.Strategy.Strategies
 {
     interface IStrategy
     {
-        void Act();
+        void Act(Player player);
     }
 }
