@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TurboPotato.DesignPatterns.Strategy.Strategies
 {
-    class LowHealthStrategy : IStrategy
+    class DefensiveStrategy : IStrategy
     {
         public void Act(Player player)
         {

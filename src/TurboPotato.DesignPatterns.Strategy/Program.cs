@@ -1,4 +1,5 @@
 ﻿using System;
+using TurboPotato.DesignPatterns.Strategy.Strategies;
 
 namespace TurboPotato.DesignPatterns.Strategy
 {
@@ -6,7 +7,21 @@ namespace TurboPotato.DesignPatterns.Strategy
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var player = new Player();
+
+            while (true)
+            {
+                if (player.Health < 30)
+                {
+                    player.CurrentStrategy = new DefensiveStrategy();
+                } else
+                {
+                    player.CurrentStrategy = new ExploreStrategy();
+                }
+
+                Console.WriteLine("Acting.");
+                player.Act();
+            }
         }
     }
 }

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TurboPotato.DesignPatterns.Strategy.Strategies;
+using TurboPotato.DesignPatterns.State.States;
 
-namespace TurboPotato.DesignPatterns.Strategy
+namespace TurboPotato.DesignPatterns.State
 {
     class Player
     {
-        public IStrategy CurrentStrategy { get; set; }
+        public IState CurrentState { get; set; }
 
         public int Health { get; set; }
 
@@ -16,7 +16,7 @@ namespace TurboPotato.DesignPatterns.Strategy
         public void Act()
         {
             Health -= 1;
-            CurrentStrategy?.Act(this);
+            CurrentState?.Act(this);
         }
     }
 }
